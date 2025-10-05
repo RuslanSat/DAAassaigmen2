@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <name>DAA Assignment 2 - Linear Array Algorithms</name>
-    <description>Implementation of Boyer-Moore Majority Vote and Kadane's Algorithm with performance analysis</description>
+    <description>Implementation of Kadane's Algorithm and Boyer-Moore Majority Vote with performance analysis</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -76,7 +76,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.daa.assignment2.cli.BenchmarkRunner</mainClass>
+                    <mainClass>BenchmarkRunner</mainClass>
                 </configuration>
             </plugin>
             
@@ -93,7 +93,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.daa.assignment2.cli.BenchmarkRunner</mainClass>
+                                    <mainClass>BenchmarkRunner</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
