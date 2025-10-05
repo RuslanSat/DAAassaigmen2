@@ -1,12 +1,5 @@
-/**
- * Boyer-Moore Majority Vote Algorithm implementation for finding majority element.
- * Student A Assignment - DAA Assignment 2
- */
 public class BoyerMooreMajorityVote {
-    
-    /**
-     * Result class containing majority element and its count information
-     */
+
     public static class MajorityResult {
         private final Integer majorityElement;
         private final int count;
@@ -31,20 +24,12 @@ public class BoyerMooreMajorityVote {
             }
         }
     }
-    
-    /**
-     * Finds the majority element using Boyer-Moore Majority Vote Algorithm.
-     * Time Complexity: O(n), Space Complexity: O(1)
-     * 
-     * @param arr the input array
-     * @return MajorityResult containing the majority element and its count
-     */
+
     public static MajorityResult findMajority(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new MajorityResult(null, 0, false);
         }
-        
-        // First pass: find candidate
+
         Integer candidate = null;
         int count = 0;
         
@@ -58,8 +43,7 @@ public class BoyerMooreMajorityVote {
                 count--;
             }
         }
-        
-        // Second pass: verify if candidate is actually majority
+
         int majorityCount = 0;
         int majorityThreshold = arr.length / 2 + 1;
         
@@ -73,10 +57,7 @@ public class BoyerMooreMajorityVote {
         
         return new MajorityResult(candidate, majorityCount, isMajority);
     }
-    
-    /**
-     * Simple version returning just the majority element or null
-     */
+
     public static Integer findMajorityElement(int[] arr) {
         MajorityResult result = findMajority(arr);
         return result.isMajority() ? result.getMajorityElement() : null;

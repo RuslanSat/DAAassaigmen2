@@ -1,7 +1,3 @@
-/**
- * Quick test file to verify both algorithms are working
- * Compile and run this to check your implementations
- */
 public class QuickTest {
     
     public static void main(String[] args) {

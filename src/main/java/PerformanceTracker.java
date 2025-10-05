@@ -1,6 +1,3 @@
-/**
- * Performance tracker for collecting algorithm metrics
- */
 public class PerformanceTracker {
     private int comparisons = 0;
     private int arrayAccesses = 0;

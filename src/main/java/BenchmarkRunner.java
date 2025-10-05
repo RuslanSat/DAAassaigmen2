@@ -13,7 +13,7 @@ public class BenchmarkRunner {
         for (int size : testSizes) {
             System.out.printf("\nTesting with array size: %d%n", size);
             System.out.println("----------------------------------------");
-            
+
             // Generate test arrays
             int[] randomArray = generateRandomArray(size);
             int[] sortedArray = generateSortedArray(size);
@@ -92,19 +92,15 @@ public class BenchmarkRunner {
         int[] array = new int[size];
         int majorityElement = 42;
         int majorityCount = size / 2 + 1; // Ensure majority
-        
-        // Fill majority elements
+
         for (int i = 0; i < majorityCount; i++) {
             array[i] = majorityElement;
         }
-        
-        // Fill remaining with different elements
         java.util.Random random = new java.util.Random(42);
         for (int i = majorityCount; i < size; i++) {
             array[i] = random.nextInt(100) + 100; // Different range
         }
-        
-        // Shuffle array
+
         for (int i = 0; i < size; i++) {
             int j = random.nextInt(size);
             int temp = array[i];
@@ -117,13 +113,11 @@ public class BenchmarkRunner {
     
     private static int[] generateNoMajorityArray(int size) {
         int[] array = new int[size];
-        
-        // Create array where no element appears more than n/2 times
+
         for (int i = 0; i < size; i++) {
             array[i] = i % (size / 2 + 1);
         }
-        
-        // Shuffle array
+
         java.util.Random random = new java.util.Random(42);
         for (int i = 0; i < size; i++) {
             int j = random.nextInt(size);

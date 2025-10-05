@@ -1,12 +1,5 @@
-/**
- * Kadane's Algorithm implementation for maximum subarray sum with position tracking.
- * Student B Assignment - DAA Assignment 2
- */
 public class KadanesAlgorithm {
-    
-    /**
-     * Result class containing maximum sum and position information
-     */
+
     public static class MaxSubarrayResult {
         private final int maxSum;
         private final int startIndex;
@@ -27,14 +20,7 @@ public class KadanesAlgorithm {
             return String.format("Max sum: %d, range: [%d, %d]", maxSum, startIndex, endIndex);
         }
     }
-    
-    /**
-     * Finds maximum subarray sum with position tracking using Kadane's Algorithm.
-     * Time Complexity: O(n), Space Complexity: O(1)
-     * 
-     * @param arr the input array
-     * @return MaxSubarrayResult containing sum and positions
-     */
+
     public static MaxSubarrayResult findMaxSubarray(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new MaxSubarrayResult(0, -1, -1);
@@ -62,9 +48,7 @@ public class KadanesAlgorithm {
         return new MaxSubarrayResult(maxSoFar, start, end);
     }
     
-    /**
-     * Simple version returning just the maximum sum
-     */
+
     public static int maxSubarraySum(int[] arr) {
         return findMaxSubarray(arr).getMaxSum();
     }
